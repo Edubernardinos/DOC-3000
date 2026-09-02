@@ -101,17 +101,17 @@ class App(tk.Tk, CanvasHandlerMixin):
         # 1. Abrir e Salvar (50% / 50%)
         f_btns_top = ttk.Frame(frame_arq)
         f_btns_top.pack(side=tk.TOP, fill=tk.X, pady=1)
-        tk.Button(f_btns_top, text="📂 Abrir", font=("Segoe UI", 8, "bold"), bg="#3b82f6", fg="white",
+        tk.Button(f_btns_top, text="Abrir", font=("Segoe UI", 8, "bold"), bg="#3b82f6", fg="white",
                   activebackground="#2563eb", relief=tk.FLAT, cursor="hand2", command=self.abrir).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
-        tk.Button(f_btns_top, text="💾 Salvar", font=("Segoe UI", 8, "bold"), bg="#10b981", fg="white",
+        tk.Button(f_btns_top, text="Salvar", font=("Segoe UI", 8, "bold"), bg="#10b981", fg="white",
                   activebackground="#059669", relief=tk.FLAT, cursor="hand2", command=self.salvar).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
 
         # 2. Zoom e Comparador
         f_zm = ttk.Frame(frame_arq)
         f_zm.pack(side=tk.TOP, fill=tk.X, pady=1)
-        ttk.Button(f_zm, text="🔍 -", width=3, command=self.zoom_out_doc).pack(side=tk.LEFT, padx=1)
+        ttk.Button(f_zm, text="-", width=3, command=self.zoom_out_doc).pack(side=tk.LEFT, padx=1)
         ttk.Button(f_zm, text="100%", width=4, command=self.zoom_100_doc).pack(side=tk.LEFT, padx=1)
-        ttk.Button(f_zm, text="🔍 +", width=3, command=self.zoom_in_doc).pack(side=tk.LEFT, padx=1)
+        ttk.Button(f_zm, text="+", width=3, command=self.zoom_in_doc).pack(side=tk.LEFT, padx=1)
         self.btn_toggle_dock = tk.Button(f_zm, text="Comparador (On)", font=("Segoe UI", 8, "bold"), bg="#2563eb", fg="white",
                                          relief=tk.FLAT, cursor="hand2", command=self.toggle_dock_comparador)
         self.btn_toggle_dock.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
@@ -119,16 +119,16 @@ class App(tk.Tk, CanvasHandlerMixin):
         # 3. Forense, Metadados e Opções (33% cada)
         f_ferramentas = ttk.Frame(frame_arq)
         f_ferramentas.pack(side=tk.TOP, fill=tk.X, pady=1)
-        tk.Button(f_ferramentas, text="🔬 Forense", font=("Segoe UI", 8, "bold"), bg="#0284c7", fg="white",
+        tk.Button(f_ferramentas, text="Forense", font=("Segoe UI", 8, "bold"), bg="#0284c7", fg="white",
                   activebackground="#0369a1", relief=tk.FLAT, cursor="hand2", command=self.abrir_analise_veracidade).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
-        tk.Button(f_ferramentas, text="🏷️ Metadados", font=("Segoe UI", 8, "bold"), bg="#059669", fg="white",
+        tk.Button(f_ferramentas, text="Metadados", font=("Segoe UI", 8, "bold"), bg="#059669", fg="white",
                   activebackground="#047857", relief=tk.FLAT, cursor="hand2", command=self.abrir_janela_metadados).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
-        tk.Button(f_ferramentas, text="⚙️ Opções", font=("Segoe UI", 8, "bold"), bg="#4b5563", fg="white",
+        tk.Button(f_ferramentas, text="Opções", font=("Segoe UI", 8, "bold"), bg="#4b5563", fg="white",
                   activebackground="#374151", relief=tk.FLAT, cursor="hand2", command=self.abrir_janela_opcoes).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
 
         # 4. Lupa HUD (10x)
         self.btn_lupa = tk.Button(
-            frame_arq, text="🔎 Lupa HUD (10x)", font=("Segoe UI", 8, "bold"),
+            frame_arq, text="Lupa HUD (10x)", font=("Segoe UI", 8, "bold"),
             bg="#f3f4f6", fg="#1f2937", activebackground="#e5e7eb", relief=tk.RAISED, borderwidth=1, cursor="hand2", command=self.toggle_lupa
         )
         self.btn_lupa.pack(side=tk.TOP, fill=tk.X, pady=1)
@@ -136,10 +136,10 @@ class App(tk.Tk, CanvasHandlerMixin):
         # 5. Histórico e Limpar (50% / 50%)
         f_baixo_arq = ttk.Frame(frame_arq)
         f_baixo_arq.pack(side=tk.TOP, fill=tk.X, pady=1)
-        self.btn_toggle_log = tk.Button(f_baixo_arq, text="📜 Histórico", font=("Segoe UI", 8, "bold"), bg="#4b5563", fg="white",
+        self.btn_toggle_log = tk.Button(f_baixo_arq, text="Histórico", font=("Segoe UI", 8, "bold"), bg="#4b5563", fg="white",
                                         activebackground="#374151", relief=tk.FLAT, cursor="hand2", command=self.toggle_painel_log)
         self.btn_toggle_log.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
-        tk.Button(f_baixo_arq, text="🗑️ Limpar", font=("Segoe UI", 8, "bold"), bg="#dc2626", fg="white",
+        tk.Button(f_baixo_arq, text="Limpar", font=("Segoe UI", 8, "bold"), bg="#dc2626", fg="white",
                   activebackground="#b91c1c", relief=tk.FLAT, cursor="hand2", command=self.limpar_tudo).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=1)
 
         self.notebook = ttk.Notebook(top)
@@ -150,7 +150,7 @@ class App(tk.Tk, CanvasHandlerMixin):
         # ABA 1: EDIÇÃO DE TEXTO
         # ==========================================
         tab_texto = ttk.Frame(self.notebook, padding=(4, 2))
-        self.notebook.add(tab_texto, text=" 📝 1. Editar Texto (OCR / Substituição) ")
+        self.notebook.add(tab_texto, text=" 1. Editar Texto (OCR / Substituição) ")
 
         self.tab_texto = tab_texto
         # Escudo transparente que intercepta qualquer clique enquanto desativado
@@ -176,14 +176,14 @@ class App(tk.Tk, CanvasHandlerMixin):
         self.entrada.bind("<KeyRelease>", lambda e: self._on_param_alterado())
 
         self.cor_custom = None
-        self.btn_cor = tk.Button(l1, text="🎨 Cor", font=("Segoe UI", 8, "bold"), bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, borderwidth=1, cursor="hand2", command=self.escolher_cor_texto)
+        self.btn_cor = tk.Button(l1, text="Cor", font=("Segoe UI", 8, "bold"), bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, borderwidth=1, cursor="hand2", command=self.escolher_cor_texto)
         self.btn_cor.pack(side=tk.LEFT, padx=2)
 
-        self.btn_pipeta = tk.Button(l1, text="💉 Pipeta", font=("Segoe UI", 8, "bold"), bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, borderwidth=1, cursor="hand2", command=self.ativar_pipeta)
+        self.btn_pipeta = tk.Button(l1, text="Pipeta", font=("Segoe UI", 8, "bold"), bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, borderwidth=1, cursor="hand2", command=self.ativar_pipeta)
         self.btn_pipeta.pack(side=tk.LEFT, padx=2)
 
-        ttk.Button(l1, text="↩️ Restaurar", command=self.restaurar_caixa).pack(side=tk.LEFT, padx=3)
-        ttk.Button(l1, text="🗑️ Excluir", command=self.excluir_caixa).pack(side=tk.LEFT, padx=3)
+        ttk.Button(l1, text="Restaurar", command=self.restaurar_caixa).pack(side=tk.LEFT, padx=3)
+        ttk.Button(l1, text="Excluir", command=self.excluir_caixa).pack(side=tk.LEFT, padx=3)
 
         # Linha 2 da aba de texto: Tipografia, Transformação e Posição Justificada
         l2 = ttk.Frame(tab_texto)
@@ -278,7 +278,7 @@ class App(tk.Tk, CanvasHandlerMixin):
         l3 = ttk.Frame(tab_texto)
         l3.pack(fill=tk.X, pady=(1, 2))
 
-        ttk.Label(l3, text="✨ Realismo:", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=(0, 4))
+        ttk.Label(l3, text="Realismo:", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=(0, 4))
 
         # Nitidez: [-] [val] [+]
         f_nit = ttk.Frame(l3)
@@ -362,13 +362,13 @@ class App(tk.Tk, CanvasHandlerMixin):
         f1 = ttk.Frame(tab_foto)
         f1.pack(fill=tk.X, pady=1)
 
-        ttk.Button(f1, text="📂 Carregar Foto (3x4)", command=self.carregar_foto).pack(side=tk.LEFT, padx=(0, 4))
-        ttk.Button(f1, text="🗑️ Remover Foto", command=self.remover_foto).pack(side=tk.LEFT, padx=(0, 6))
+        ttk.Button(f1, text="Carregar Foto (3x4)", command=self.carregar_foto).pack(side=tk.LEFT, padx=(0, 4))
+        ttk.Button(f1, text="Remover Foto", command=self.remover_foto).pack(side=tk.LEFT, padx=(0, 6))
 
         self.lbl_foto_status = ttk.Label(f1, text="(Nenhuma foto 3x4 carregada)", font=("Segoe UI", 9, "italic"), foreground="#888888")
         self.lbl_foto_status.pack(side=tk.LEFT, padx=(0, 8))
 
-        ttk.Label(f1, text="💡 Arraste o corpo da foto para mover ou puxe os cantos para redimensionar!", foreground="#007700", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=4)
+        ttk.Label(f1, text="Arraste o corpo da foto para mover ou puxe os cantos para redimensionar!", foreground="#007700", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=4)
 
         # Linha 2: Posição, Dimensões e Giro Justificados [-] [val] [+]
         f2 = ttk.Frame(tab_foto)
@@ -440,7 +440,7 @@ class App(tk.Tk, CanvasHandlerMixin):
         f3 = ttk.Frame(tab_foto)
         f3.pack(fill=tk.X, pady=(1, 2))
 
-        ttk.Label(f3, text="✨ Realismo Foto:", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=(0, 4))
+        ttk.Label(f3, text="Realismo Foto:", font=("Segoe UI", 9, "bold")).pack(side=tk.LEFT, padx=(0, 4))
 
         # Nitidez
         f_fnit = ttk.Frame(f3)
@@ -523,19 +523,19 @@ class App(tk.Tk, CanvasHandlerMixin):
         # ABA 3: VISUALIZAR (POPUP DEDICADO APENAS A IMAGEM)
         # ==========================================
         tab_resultado = ttk.Frame(self.notebook, padding=(4, 2))
-        self.notebook.add(tab_resultado, text=" 👁️ Visualizar ")
+        self.notebook.add(tab_resultado, text=" Visualizar ")
 
         f_res = ttk.Frame(tab_resultado)
         f_res.pack(fill=tk.BOTH, expand=True, pady=2)
 
         tk.Button(
-            f_res, text="👁️ Abrir Visualização Limpa (Apenas a Imagem)", font=("Segoe UI", 9, "bold"),
+            f_res, text="Abrir Visualização Limpa (Apenas a Imagem)", font=("Segoe UI", 9, "bold"),
             bg="#2563eb", fg="white", activebackground="#1d4ed8", relief=tk.RAISED, cursor="hand2",
             command=self.abrir_popup_visualizar
         ).pack(side=tk.LEFT, padx=(4, 8), pady=1)
 
         ttk.Label(
-            f_res, text="✨ Abre uma janela dedicada apenas com a imagem final pura, com opção de Lupa HUD e Zoom livre.",
+            f_res, text="Abre uma janela dedicada apenas com a imagem final pura, com opção de Lupa HUD e Zoom livre.",
             font=("Segoe UI", 8, "italic"), foreground="#4b5563"
         ).pack(side=tk.LEFT)
 
@@ -566,7 +566,7 @@ class App(tk.Tk, CanvasHandlerMixin):
         self.canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         # 3. Coluna 2: Comparador Lado a Lado (sempre à direita)
-        self.frame_preview_dock = ttk.LabelFrame(centro, text="🔍 Visualização Lado a Lado (Ao Vivo)", padding=6)
+        self.frame_preview_dock = ttk.LabelFrame(centro, text="Visualização Lado a Lado (Ao Vivo)", padding=6)
         self.frame_preview_dock.grid(row=0, column=2, sticky="ns", padx=(4, 0))
 
         bar_dock = ttk.Frame(self.frame_preview_dock)
@@ -578,14 +578,14 @@ class App(tk.Tk, CanvasHandlerMixin):
             ttk.Radiobutton(bar_dock, text=z_label, value=z_val, variable=self.preview_zoom_var, command=self._atualizar_preview_lado_a_lado).pack(side=tk.LEFT, padx=1)
 
         self.preview_grid_var = tk.BooleanVar(value=True)
-        ttk.Checkbutton(bar_dock, text="📐 Grade", variable=self.preview_grid_var, command=self._atualizar_preview_lado_a_lado).pack(side=tk.LEFT, padx=(6, 2))
+        ttk.Checkbutton(bar_dock, text="Grade", variable=self.preview_grid_var, command=self._atualizar_preview_lado_a_lado).pack(side=tk.LEFT, padx=(6, 2))
 
         self.preview_grid_passo_var = tk.IntVar(value=14)
         ttk.Spinbox(bar_dock, from_=6, to=50, width=3, textvariable=self.preview_grid_passo_var, command=self._atualizar_preview_lado_a_lado).pack(side=tk.LEFT, padx=1)
         ttk.Label(bar_dock, text="px").pack(side=tk.LEFT, padx=(0, 2))
-        tk.Button(bar_dock, text="✖", font=("Segoe UI", 7, "bold"), bg="#f3f4f6", fg="#ef4444", relief=tk.FLAT, cursor="hand2", command=self.toggle_dock_comparador).pack(side=tk.RIGHT, padx=2)
+        tk.Button(bar_dock, text="X", font=("Segoe UI", 7, "bold"), bg="#f3f4f6", fg="#ef4444", relief=tk.FLAT, cursor="hand2", command=self.toggle_dock_comparador).pack(side=tk.RIGHT, padx=2)
 
-        self.lbl_dock_info = ttk.Label(self.frame_preview_dock, text="💡 Selecione qualquer palavra no documento.", foreground="#0066cc", font=("Segoe UI", 9))
+        self.lbl_dock_info = ttk.Label(self.frame_preview_dock, text="Selecione qualquer palavra no documento.", foreground="#0066cc", font=("Segoe UI", 9))
         self.lbl_dock_info.pack(side=tk.TOP, fill=tk.X, pady=(0, 4))
 
         f_cp = ttk.Frame(self.frame_preview_dock)
@@ -639,7 +639,7 @@ class App(tk.Tk, CanvasHandlerMixin):
             self.modo_pipeta = True
             self.btn_pipeta.config(bg="#ffcc00", relief=tk.SUNKEN)
             self.canvas.config(cursor="tcross")
-            self.status.config(text="💉 PIPETA ATIVA: Clique em qualquer letra ou pixel do documento para puxar a cor exata.")
+            self.status.config(text="PIPETA ATIVA: Clique em qualquer letra ou pixel do documento para puxar a cor exata.")
 
     def abrir_popup_visualizar(self):
         """Abre a janela popup dedicada exclusivamente para inspecionar a imagem final com zoom e lupa."""
@@ -837,7 +837,7 @@ class App(tk.Tk, CanvasHandlerMixin):
             cw = max(200, self.canvas_preview.winfo_width())
             self.canvas_preview.create_text(
                 cw // 2, 50,
-                text="💡 Selecione qualquer palavra no documento acima para ver o comparador Lado a Lado aqui.",
+                text="Selecione qualquer palavra no documento acima para ver o comparador Lado a Lado aqui.",
                 fill="#999999", font=("Segoe UI", 10, "italic")
             )
             return
@@ -884,8 +884,8 @@ class App(tk.Tk, CanvasHandlerMixin):
             draw_p = ImageDraw.Draw(prancha)
             fonte_p = ImageFont.load_default()
 
-            draw_p.text((margem + 2, 7), f"⬅️ ORIGINAL ({titulo_info})", fill=(140, 200, 255), font=fonte_p)
-            draw_p.text((margem * 2 + zw + 2, 7), "➡️ MODIFICADO (AO VIVO)", fill=(130, 255, 140), font=fonte_p)
+            draw_p.text((margem + 2, 7), f"ORIGINAL ({titulo_info})", fill=(140, 200, 255), font=fonte_p)
+            draw_p.text((margem * 2 + zw + 2, 7), "MODIFICADO (AO VIVO)", fill=(130, 255, 140), font=fonte_p)
 
             prancha.paste(view_orig, (margem, cabecalho + margem))
             prancha.paste(view_mod, (margem * 2 + zw, cabecalho + margem))
@@ -900,12 +900,12 @@ class App(tk.Tk, CanvasHandlerMixin):
             draw_p = ImageDraw.Draw(prancha)
             fonte_p = ImageFont.load_default()
 
-            draw_p.text((margem + 2, 6), f"⬅️ ORIGINAL: {titulo_info}", fill=(140, 200, 255), font=fonte_p)
+            draw_p.text((margem + 2, 6), f"ORIGINAL: {titulo_info}", fill=(140, 200, 255), font=fonte_p)
             prancha.paste(view_orig, (margem, cabecalho + 4))
             draw_p.rectangle([margem - 1, cabecalho + 3, margem + zw, cabecalho + 4 + zh], outline=(60, 120, 180), width=2)
 
             y_bloco2 = cabecalho + 4 + zh + espaco_entre
-            draw_p.text((margem + 2, y_bloco2), "➡️ MODIFICADO (AO VIVO):", fill=(130, 255, 140), font=fonte_p)
+            draw_p.text((margem + 2, y_bloco2), "MODIFICADO (AO VIVO):", fill=(130, 255, 140), font=fonte_p)
             prancha.paste(view_mod, (margem, y_bloco2 + cabecalho))
             draw_p.rectangle([margem - 1, y_bloco2 + cabecalho - 1, margem + zw, y_bloco2 + cabecalho + zh], outline=(40, 160, 70), width=2)
 
@@ -1325,10 +1325,10 @@ class App(tk.Tk, CanvasHandlerMixin):
 
     def _clicou_quando_desativado(self):
         """Disparado quando o usuário tenta clicar nos controles cinzas."""
-        self.status.config(text="⚠️ Selecione primeiro o quadrado com o mouse e a palavra que é para ser alterada.")
+        self.status.config(text="Selecione primeiro o quadrado com o mouse e a palavra que é para ser alterada.")
         messagebox.showinfo(
             "Seleção Necessária",
-            "👆 Selecione primeiro o quadrado com o mouse e a palavra que é para ser alterada no documento!"
+            "Selecione primeiro o quadrado com o mouse e a palavra que é para ser alterada no documento!"
         )
 
     def atualizar_estado_edicao_texto(self):
@@ -1426,40 +1426,40 @@ class App(tk.Tk, CanvasHandlerMixin):
         # Menu Arquivo
         menu_arq = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Arquivo", menu=menu_arq)
-        menu_arq.add_command(label="📂 Abrir Documento...", command=self.abrir)
-        menu_arq.add_command(label="💾 Salvar Imagem...", command=self.salvar)
+        menu_arq.add_command(label="Abrir Documento...", command=self.abrir)
+        menu_arq.add_command(label="Salvar Imagem...", command=self.salvar)
         menu_arq.add_separator()
-        menu_arq.add_command(label="🏷️ Propriedades / Metadados...", command=self.abrir_janela_metadados)
-        menu_arq.add_command(label="🔬 Análise Forense...", command=self.abrir_analise_veracidade)
+        menu_arq.add_command(label="Propriedades / Metadados...", command=self.abrir_janela_metadados)
+        menu_arq.add_command(label="Análise Forense...", command=self.abrir_analise_veracidade)
         menu_arq.add_separator()
         menu_arq.add_command(label="Sair", command=self.destroy)
 
         # Menu Opções
         menu_opcoes = tk.Menu(menubar, tearoff=0)
-        menubar.add_cascade(label="⚙️ Opções", menu=menu_opcoes)
+        menubar.add_cascade(label="Opções", menu=menu_opcoes)
 
         # Submenu Temas
         menu_temas = tk.Menu(menu_opcoes, tearoff=0)
-        menu_opcoes.add_cascade(label="🎨 Tema da Interface", menu=menu_temas)
-        menu_temas.add_command(label="☀️ Claro (Padrão Original)", command=lambda: (self.aplicar_tema("claro"), self.atualizar_estado_edicao_texto()))
-        menu_temas.add_command(label="🌙 Tema escuro/cinza", command=lambda: self.aplicar_tema("vscode"))
+        menu_opcoes.add_cascade(label="Tema da Interface", menu=menu_temas)
+        menu_temas.add_command(label="Claro (Padrão Original)", command=lambda: (self.aplicar_tema("claro"), self.atualizar_estado_edicao_texto()))
+        menu_temas.add_command(label="Tema escuro/cinza", command=lambda: self.aplicar_tema("vscode"))
 
         # Submenu Tamanho da Tela
         menu_tela = tk.Menu(menu_opcoes, tearoff=0)
-        menu_opcoes.add_cascade(label="🖥️ Tamanho da Tela", menu=menu_tela)
+        menu_opcoes.add_cascade(label="Tamanho da Tela", menu=menu_tela)
         menu_tela.add_command(label="HD Compacto (1280 x 720)", command=lambda: self.redimensionar_janela(1280, 720))
         menu_tela.add_command(label="Padrão Médio (1460 x 950)", command=lambda: self.redimensionar_janela(1460, 950))
         menu_tela.add_command(label="Full HD (1920 x 1080)", command=lambda: self.redimensionar_janela(1920, 1080))
         menu_tela.add_separator()
-        menu_tela.add_command(label="🔲 Maximizar / Tela Cheia", command=self.toggle_maximizar)
-        menu_tela.add_command(label="✏️ Tamanho Personalizado...", command=self.popup_tamanho_personalizado)
+        menu_tela.add_command(label="Maximizar / Tela Cheia", command=self.toggle_maximizar)
+        menu_tela.add_command(label="Tamanho Personalizado...", command=self.popup_tamanho_personalizado)
 
         # Menu Exibir
         menu_exibir = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Exibir", menu=menu_exibir)
-        menu_exibir.add_command(label="👁️ Alternar Comparador Lado a Lado", command=self.toggle_dock_comparador)
-        menu_exibir.add_command(label="📜 Alternar Histórico / Log", command=self.toggle_painel_log)
-        menu_exibir.add_command(label="🔎 Lupa HUD (10x)", command=self.toggle_lupa)
+        menu_exibir.add_command(label="Alternar Comparador Lado a Lado", command=self.toggle_dock_comparador)
+        menu_exibir.add_command(label="Alternar Histórico / Log", command=self.toggle_painel_log)
+        menu_exibir.add_command(label="Lupa HUD (10x)", command=self.toggle_lupa)
 
     def redimensionar_janela(self, w, h):
         self.state("normal")
@@ -1522,12 +1522,12 @@ class App(tk.Tk, CanvasHandlerMixin):
         if self.log_visivel:
             self.frame_log.grid_remove()
             self.log_visivel = False
-            self.btn_toggle_log.config(text="📜 Histórico (Off)", bg="#9ca3af", fg="white")
+            self.btn_toggle_log.config(text="Histórico (Off)", bg="#9ca3af", fg="white")
             self.status.config(text="Painel de Histórico ocultado.")
         else:
             self.frame_log.grid()
             self.log_visivel = True
-            self.btn_toggle_log.config(text="📜 Histórico", bg="#4b5563", fg="white")
+            self.btn_toggle_log.config(text="Histórico", bg="#4b5563", fg="white")
             self.status.config(text="Painel de Histórico restaurado à esquerda.")
 
     # --- Operações de Arquivo e Ciclo de Vida ---

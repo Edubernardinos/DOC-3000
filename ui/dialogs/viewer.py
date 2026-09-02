@@ -33,7 +33,7 @@ class JanelaVisualizarResultado(tk.Toplevel):
         bar.pack(side=tk.TOP, fill=tk.X)
 
         self.btn_lupa = tk.Button(
-            bar, text="🔎 Ativar Lupa", font=("Segoe UI", 9, "bold"),
+            bar, text="Ativar Lupa", font=("Segoe UI", 9, "bold"),
             bg="#f3f4f6", fg="#1f2937", activebackground="#e5e7eb",
             relief=tk.RAISED, cursor="hand2", command=self.toggle_lupa
         )
@@ -41,20 +41,20 @@ class JanelaVisualizarResultado(tk.Toplevel):
 
         ttk.Separator(bar, orient=tk.VERTICAL).pack(side=tk.LEFT, fill=tk.Y, padx=6)
 
-        ttk.Button(bar, text="🔍 -", width=3, command=self.zoom_out).pack(side=tk.LEFT, padx=1)
+        ttk.Button(bar, text="-", width=3, command=self.zoom_out).pack(side=tk.LEFT, padx=1)
         self.lbl_zoom = ttk.Label(bar, text="100%", font=("Segoe UI", 9, "bold"), width=6, anchor="center")
         self.lbl_zoom.pack(side=tk.LEFT, padx=2)
-        ttk.Button(bar, text="🔍 +", width=3, command=self.zoom_in).pack(side=tk.LEFT, padx=1)
+        ttk.Button(bar, text="+", width=3, command=self.zoom_in).pack(side=tk.LEFT, padx=1)
         ttk.Button(bar, text="100%", width=4, command=self.zoom_100).pack(side=tk.LEFT, padx=2)
         ttk.Button(bar, text="Ajustar à Janela", command=self.ajustar_janela).pack(side=tk.LEFT, padx=4)
 
         ttk.Label(
-            bar, text="💡 Dica: Role a rodinha do mouse para dar Zoom e arraste para mover a imagem.",
+            bar, text="Dica: Role a rodinha do mouse para dar Zoom e arraste para mover a imagem.",
             font=("Segoe UI", 9), foreground="#666666"
         ).pack(side=tk.LEFT, padx=12)
 
         tk.Button(
-            bar, text="✖ Fechar", font=("Segoe UI", 9, "bold"),
+            bar, text="X Fechar", font=("Segoe UI", 9, "bold"),
             bg="#ef4444", fg="white", activebackground="#dc2626",
             relief=tk.FLAT, cursor="hand2", command=self.destroy
         ).pack(side=tk.RIGHT, padx=4)
@@ -111,10 +111,10 @@ class JanelaVisualizarResultado(tk.Toplevel):
     def toggle_lupa(self):
         self.modo_lupa = not self.modo_lupa
         if self.modo_lupa:
-            self.btn_lupa.config(bg="#f59e0b", fg="white", relief=tk.SUNKEN, text="🔎 Lupa Ativa (10x)")
+            self.btn_lupa.config(bg="#f59e0b", fg="white", relief=tk.SUNKEN, text="Lupa Ativa (10x)")
             self.canvas.config(cursor="crosshair")
         else:
-            self.btn_lupa.config(bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, text="🔎 Ativar Lupa")
+            self.btn_lupa.config(bg="#f3f4f6", fg="#1f2937", relief=tk.RAISED, text="Ativar Lupa")
             self.canvas.config(cursor="fleur")
             self.canvas.delete("lupa_view")
 

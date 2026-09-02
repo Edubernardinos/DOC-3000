@@ -11,11 +11,11 @@ class JanelaOpcoes(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.app = parent
-        self.title("⚙️ Opções - DOC_EDITOR_3000")
+        self.title("Opções - DOC_EDITOR_3000")
         self.geometry("450x360")
         self.resizable(False, False)
 
-        f_tema = ttk.LabelFrame(self, text=" 🎨 Tema da Interface ", padding=10)
+        f_tema = ttk.LabelFrame(self, text=" Tema da Interface ", padding=10)
         f_tema.pack(fill=tk.X, padx=12, pady=(10, 6))
 
         ttk.Label(f_tema, text="Escolha a aparência do programa:").pack(anchor="w", pady=(0, 6))
@@ -23,16 +23,16 @@ class JanelaOpcoes(tk.Toplevel):
         f_btns_tema = ttk.Frame(f_tema)
         f_btns_tema.pack(fill=tk.X)
         
-        tk.Button(f_btns_tema, text="☀️ Branco / Claro (Padrão)", font=("Segoe UI", 9, "bold"),
+        tk.Button(f_btns_tema, text="Branco / Claro (Padrão)", font=("Segoe UI", 9, "bold"),
                   bg="#f4f4f5", fg="#18181b", relief=tk.RAISED, cursor="hand2", padx=10, pady=6,
                   command=lambda: self.app.aplicar_tema("claro")).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=4)
 
-        tk.Button(f_btns_tema, text="🌙 Tema escuro/cinza", font=("Segoe UI", 9, "bold"),
+        tk.Button(f_btns_tema, text="Tema escuro/cinza", font=("Segoe UI", 9, "bold"),
                   bg="#252526", fg="#cccccc", activebackground="#007acc", activeforeground="#ffffff",
                   relief=tk.RAISED, cursor="hand2", padx=10, pady=6,
                   command=lambda: self.app.aplicar_tema("vscode")).pack(side=tk.LEFT, fill=tk.X, expand=True, padx=4)
 
-        f_tela = ttk.LabelFrame(self, text=" 🖥️ Tamanho da Janela (Resolução da Tela) ", padding=10)
+        f_tela = ttk.LabelFrame(self, text=" Tamanho da Janela (Resolução da Tela) ", padding=10)
         f_tela.pack(fill=tk.X, padx=12, pady=6)
 
         f_grid_res = ttk.Frame(f_tela)
@@ -41,7 +41,7 @@ class JanelaOpcoes(tk.Toplevel):
         ttk.Button(f_grid_res, text="1280 x 720 (HD)", command=lambda: self.app.redimensionar_janela(1280, 720)).grid(row=0, column=0, padx=3, pady=2, sticky="ew")
         ttk.Button(f_grid_res, text="1460 x 950 (Padrão)", command=lambda: self.app.redimensionar_janela(1460, 950)).grid(row=0, column=1, padx=3, pady=2, sticky="ew")
         ttk.Button(f_grid_res, text="1920 x 1080 (Full HD)", command=lambda: self.app.redimensionar_janela(1920, 1080)).grid(row=1, column=0, padx=3, pady=2, sticky="ew")
-        ttk.Button(f_grid_res, text="🔲 Maximizar Tela", command=self.app.toggle_maximizar).grid(row=1, column=1, padx=3, pady=2, sticky="ew")
+        ttk.Button(f_grid_res, text="Maximizar Tela", command=self.app.toggle_maximizar).grid(row=1, column=1, padx=3, pady=2, sticky="ew")
         f_grid_res.columnconfigure(0, weight=1)
         f_grid_res.columnconfigure(1, weight=1)
 

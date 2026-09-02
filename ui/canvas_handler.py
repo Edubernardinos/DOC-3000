@@ -89,7 +89,7 @@ class CanvasHandlerMixin:
         if self.modo_lupa:
             self.btn_lupa.config(bg="#f59e0b", fg="#ffffff", relief=tk.SUNKEN)
             self.canvas.config(cursor="tcross")
-            self.status.config(text="🔎 LUPA HUD ATIVADA (10x): Passe o mouse pelo documento para inspecionar cada pixel.")
+            self.status.config(text="LUPA HUD ATIVADA (10x): Passe o mouse pelo documento para inspecionar cada pixel.")
         else:
             if getattr(self, "tema_atual", "claro") == "vscode":
                 self.btn_lupa.config(bg="#2d2d30", fg="#cccccc", relief=tk.RAISED)

@@ -13,7 +13,7 @@ from PIL import Image, ImageTk
 class JanelaAnaliseVeracidade(tk.Toplevel):
     def __init__(self, parent, img_original, img_modificada, caixas_modificadas, foto_info=None):
         super().__init__(parent)
-        self.title("🔬 Análise de Veracidade Forense - Inspeção Antes vs Depois")
+        self.title("Análise de Veracidade Forense - Inspeção Antes vs Depois")
         self.geometry("1100x780")
         self.minsize(900, 650)
 
@@ -88,7 +88,7 @@ class JanelaAnaliseVeracidade(tk.Toplevel):
         self.canvas_view = tk.Canvas(f_canvas, bg="#222222")
         self.canvas_view.pack(fill=tk.BOTH, expand=True)
 
-        f_diag = ttk.LabelFrame(corpo, text="📊 Relatório Forense & Métricas", padding=8)
+        f_diag = ttk.LabelFrame(corpo, text="Relatório Forense & Métricas", padding=8)
         f_diag.pack(side=tk.RIGHT, fill=tk.Y, padx=(6, 0))
 
         self.lbl_score = ttk.Label(f_diag, text="Score de Veracidade: 96%", font=("Segoe UI", 14, "bold"), foreground="#008800")
@@ -151,19 +151,19 @@ class JanelaAnaliseVeracidade(tk.Toplevel):
             f"Região: {reg['nome']}\n"
             f"Dimensões: {xb-xa} x {yb-ya} pixels\n\n"
             f"--- MÉTRICAS FORENSES ---\n"
-            f"• Grão/Ruído do Papel:  {compat_ruido}%\n"
-            f"• Suavidade das Bordas: {compat_borda}%\n"
-            f"• Coerência Luminosa:   {compat_lum}%\n"
-            f"• Índice de Camuflagem: {score_final}%\n\n"
+            f"- Grão/Ruído do Papel:  {compat_ruido}%\n"
+            f"- Suavidade das Bordas: {compat_borda}%\n"
+            f"- Coerência Luminosa:   {compat_lum}%\n"
+            f"- Índice de Camuflagem: {score_final}%\n\n"
             f"--- RECOMENDAÇÃO INTELIGENTE ---\n"
         )
 
         if compat_ruido < 85:
-            relatorio += "💡 Dica: Ajuste o 'Ruído (Grão)' em +2 a +4 para igualar perfeitamente ao grão do scanner.\n"
+            relatorio += "Dica: Ajuste o 'Ruído (Grão)' em +2 a +4 para igualar perfeitamente ao grão do scanner.\n"
         elif compat_borda < 85:
-            relatorio += "💡 Dica: Aumente o 'Blur (Foco)' em +0.1 para suavizar as arestas das letras.\n"
+            relatorio += "Dica: Aumente o 'Blur (Foco)' em +0.1 para suavizar as arestas das letras.\n"
         else:
-            relatorio += "✅ A textura e o contraste estão perfeitamente harmonizados com o documento original.\n"
+            relatorio += "A textura e o contraste estão perfeitamente harmonizados com o documento original.\n"
 
         self.txt_metricas.delete("1.0", tk.END)
         self.txt_metricas.insert(tk.END, relatorio)

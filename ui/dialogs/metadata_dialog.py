@@ -12,7 +12,7 @@ class JanelaMetadados(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.app = parent
-        self.title("🏷️ Propriedades do Documento, Metadados Reais & Tamanho")
+        self.title("Propriedades do Documento, Metadados Reais & Tamanho")
         self.geometry("860x600")
         self.minsize(750, 480)
 
@@ -60,7 +60,7 @@ class JanelaMetadados(tk.Toplevel):
         ttk.Label(f_px, text=" x ").pack(side=tk.LEFT)
         ttk.Entry(f_px, textvariable=self.app.meta_altura_px_var, width=6).pack(side=tk.LEFT)
         ttk.Label(f_px, text=" px").pack(side=tk.LEFT, padx=2)
-        tk.Button(f_px, text="📐 Aplicar", bg="#0066cc", fg="white", font=("Segoe UI", 8, "bold"),
+        tk.Button(f_px, text="Aplicar", bg="#0066cc", fg="white", font=("Segoe UI", 8, "bold"),
                   activebackground="#004499", activeforeground="white", relief=tk.RAISED, cursor="hand2",
                   command=self.aplicar_res).pack(side=tk.LEFT, padx=6)
 
@@ -74,9 +74,9 @@ class JanelaMetadados(tk.Toplevel):
 
         f_bar = ttk.Frame(f_bot)
         f_bar.pack(fill=tk.X, pady=(0, 4))
-        ttk.Button(f_bar, text="🔄 Atualizar Leitura", command=self.atualizar_tabela).pack(side=tk.LEFT, padx=2)
-        ttk.Button(f_bar, text="🗑️ Limpar Todos os Metadados", command=self.app.remover_metadados).pack(side=tk.LEFT, padx=4)
-        ttk.Label(f_bar, text="💡 Clique duas vezes em qualquer linha para editar o valor.", foreground="#666666").pack(side=tk.LEFT, padx=10)
+        ttk.Button(f_bar, text="Atualizar Leitura", command=self.atualizar_tabela).pack(side=tk.LEFT, padx=2)
+        ttk.Button(f_bar, text="Limpar Todos os Metadados", command=self.app.remover_metadados).pack(side=tk.LEFT, padx=4)
+        ttk.Label(f_bar, text="Clique duas vezes em qualquer linha para editar o valor.", foreground="#666666").pack(side=tk.LEFT, padx=10)
 
         f_tree = ttk.Frame(f_bot)
         f_tree.pack(fill=tk.BOTH, expand=True)
