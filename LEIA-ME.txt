@@ -1,0 +1,31 @@
+========================================================================
+             DOC_EDITOR_3000 - GUIA DE USO E DISTRIBUIÇÃO
+========================================================================
+
+📦 1. COMO ENVIAR PARA SEU AMIGO:
+------------------------------------------------------------------------
+Envie o arquivo ZIP pronto:
+👉 DOC_EDITOR_3000_Pronto_Para_Enviar.zip
+
+O que seu amigo precisa fazer:
+1. Extrair/descompactar o arquivo ZIP no computador dele.
+2. Clicar duas vezes em: DOC_EDITOR_3000.exe
+(Ele NÃO precisa de Python, nem de instalar nada!).
+
+
+💻 2. COMO VOCÊ MESMO ABRE O PROGRAMA NO SEU PC:
+------------------------------------------------------------------------
+- Dê dois cliques no atalho "DOC_EDITOR_3000" na sua Área de Trabalho.
+- Ou dê dois cliques no arquivo: DOC_EDITOR_3000.bat
+
+
+🛠️ 3. ESTRUTURA DOS ARQUIVOS:
+------------------------------------------------------------------------
+- DOC_EDITOR_3000_Pronto_Para_Enviar.zip -> Arquivo zip pronto para envio
+- dist\DOC_EDITOR_3000\                  -> Pasta com o executável .exe
+- doc_editor.py                          -> Código fonte principal
+- DOC_EDITOR_3000.bat                    -> Inicializador
+- DOC_EDITOR_3000.vbs                    -> Inicializador silencioso nativo
+- Instalar_DOC_EDITOR_3000.bat           -> Instalador de atalhos da Área de Trabalho
+- app_icon.ico                           -> Ícone oficial do aplicativo
+========================================================================
