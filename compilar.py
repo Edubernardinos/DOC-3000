@@ -41,6 +41,8 @@ def main():
         "--hidden-import=docx",
         "--hidden-import=cv2",
         "--hidden-import=numpy",
+        "--collect-submodules=core",
+        "--collect-submodules=ui",
         "--clean",
         "--noconfirm",
         "doc_editor.py"
